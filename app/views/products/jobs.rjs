@@ -1,0 +1,5 @@
+page.visual_effect :fade, 'about_us'
+...
+page.delay(1) do
+    page.visual_effect :appear, 'jobs'
+end

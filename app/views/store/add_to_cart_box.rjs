@@ -1,0 +1,5 @@
+page.replace_html :total, @cart.contar_total
+page.visual_effect(:highlight, "cart", :duration => 0.5)
+if @cart.contar_total >= 1
+  page.replace_html 'ButtonEnd', :partial => 'botao'
+end

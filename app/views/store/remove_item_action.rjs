@@ -1,0 +1,12 @@
+#if @flag == true
+#  page.alert("Nao posso remover")
+#else
+  page.replace_html :total, @cart.contar_total
+  page.visual_effect(:highlight, "cart", :duration => 0.5)
+  page.replace_html :notice, flash[:notice]
+  flash.discard
+  if @cart.contar_total == 0
+    page.replace_html 'ButtonEnd', "<b>Nenhum item selecionado ate o momento</b>"
+    page.visual_effect(:highlight, "ButtonEnd", :duration => 0.5)
+  end
+#end

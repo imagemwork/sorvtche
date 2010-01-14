@@ -1,0 +1,15 @@
+<div class="title-users">
+	Total de Orçamentos Realizados(<strong><%= @orders.size %></strong>)
+	<%= image_tag("arrow_down.png", :class => "arrow-down") %>
+</div>
+<br />
+
+<% @orders.each do |order| %>
+
+	<div id="nameBudgets">	
+		<span class="realizado">Realizado por: </span><%= link_to order.user.name, {:controller => "budgets", :action => "show", :id => order.id} %>
+		<span class="styleDate">
+			<%=  data_bonita(order.created_at) %>
+		</span>
+	</div>
+<% end -%>

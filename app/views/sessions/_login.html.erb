@@ -1,0 +1,22 @@
+
+<% form_tag session_path do -%>
+
+	<p>
+		<%= label_tag 'login' %><br />
+		<%= text_field_tag 'login', @login, :class => "input-login" %>
+	</p>
+	
+	<br />
+	
+	<p>
+		<%= label_tag 'senha' %><br />
+		<%= password_field_tag 'password', nil, :class => "input-login" %>
+	</p>
+
+	<%= submit_tag 'Logar', :class => "button-login" %>
+	
+	<br />
+	<small class="cadastre">Caso não tenha login e senha, cadastre-se <%= link_to "aqui", "http://www.sorvtche.com.br" %></small>
+	
+	
+<% end -%>

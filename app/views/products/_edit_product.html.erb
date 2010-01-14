@@ -1,0 +1,42 @@
+<%= title_page("Produtos") %>
+
+
+<% form_remote_for p, :url => {:controller => "products", :action => "update", :id => p.id} do |f|%>
+
+   <%= f.error_messages %>
+	  
+	<div id="input-left">
+		<p>
+	    <%= f.label :nome %><br />
+	    <%= f.text_field :name %>
+	  </p>
+	
+		<br />
+
+  	  <p>
+	    <%= f.label :código %>
+	    <%= f.text_field :code, :size => 5 %>
+
+	    <%= f.label :peso %>
+	    <%= f.text_field :weight, :size => 5 %>
+	  </p>
+	
+		<br />
+	
+	  <p>
+		<%= f.label :cateogoria %><br />
+	    <%= f.collection_select :category_id, Category.all, :id, :name %>
+	    
+	  </p>
+	</div>
+	<div id="textarea-right">
+	
+	    <%= f.label :ingredientes %><br />
+	    <%= f.text_area :ingredients, :rows => "5", :cols => "40" %>
+	 	<br /><br />
+		<%= f.submit 'Atualizar' %> ou <span class="cancelar"><%= link_to_remote "Cancelar", :url => {:action => 'close_box_edit', :id => p.id } %></span>
+	</div>
+
+
+<% end %>
+

@@ -1,0 +1,27 @@
+<%= title("Finalizando Orçamento") %>
+<br />
+<p>Verifique abaixo seus produtos selecionados, caso queira alterar algum clique
+<%= link_to "AQUI", :controller => :store %> para voltar para a listagem.</p><br />
+<br />
+
+
+<b>Seus Produtos</b> <br /><br /> <%= link_to "Realizar Alterações", :controller => :store %></small></b></h3><br />
+<div id="list_itens_budget">
+	<% for cart_item in @cart.items %>
+		<%= cart_item.name %> - <b><%= cart_item.item_quantity + cart_item.box_quantity%></b><br />
+	<% end -%><br />
+</div>
+
+<div id="MessageEnd">
+	<p></p>
+</div>
+
+<% form_for :order, :url => {:action => :save_order} do |form| %>
+
+	<b>Nome: </b><%= current_user.name 	%><br />
+	<b>E-mail: </b><%= current_user.email %><br />
+	
+	<%= form.hidden_field :user_id, :value => current_user.id %><br />
+	
+	<%= submit_tag "Finalizar!" %>
+<% end -%>

@@ -1,0 +1,6 @@
+page.visual_effect :fade, dom_id(@category)
+page.insert_html :before, dom_id(@category), "<span id='mens'>Categoria deletada!</span>"
+page.delay(2.0) do
+    page.hide :mens
+    page.hide "name_#{dom_id(@category)}"
+end

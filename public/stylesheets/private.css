@@ -1,0 +1,621 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background-color: #e5e5e5;
+	font-family: arial, Helvetica;
+	font-size: 13px;
+}
+
+h1 {
+	color: #44E4DA;
+	font-size: 22px;
+}
+.h2-login {
+	font-family: Arial, Helvetica, Sans-serif;
+}
+.h2-login-align {
+	margin-left: 15px;
+}
+a {	color: black; }
+
+#top {
+	padding: 10px 0px 10px 10px;
+	background: #356AA0;
+	color: #EBEBEB;
+	font-size: 14px;
+	font-weight: bold;
+	height: 16px;
+	margin-bottom: 10px;
+}
+
+#title-top {
+	float: left;
+}
+
+#pnlLogin {
+	width: 800px;
+	height: auto;
+	margin: 0px auto;
+	padding: 10px;
+	display: table;
+	background: #fff;
+}
+
+#menu {
+	width: 820px;
+	height: 30px;
+	margin: 0 auto;
+	position:relative;
+	
+}
+
+ul.menu-admin {
+	list-style: none;
+	position: absolute;
+	bottom: 3px;
+	right: 10px;
+	float: right;
+}
+
+ul.menu-admin-left {
+	width: 400px;
+	float: left;
+	position: absolute;
+	bottom: 3px;
+	left: 10px;
+}
+
+ul.menu-admin-left li {
+	display: inline;
+	background: #3F4C6B;
+	padding: 3px 5px 3px 5px;
+}
+
+ul.menu-admin-left li a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+ul.menu-admin li {
+	display: inline;
+	background: #3F4C6B;
+	padding: 3px 5px 3px 5px;
+}
+
+ul.menu-admin li a {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+#form-login {
+	width: 345px;
+	height: 220px;
+	padding: 29px;
+	float: left;
+	background: #fff url("/images/sombra.jpg") no-repeat left top;
+}
+
+#form-login-new {
+	width: 345px;
+	height: 600px;
+	padding: 29px;
+	float: left;
+	background: #fff url("/images/sombra2.jpg") no-repeat left top;
+}
+.input-login {
+	font-size: 22px;
+	padding: 3px;
+	border: 1px solid #E5E5E5;
+	background: #FBFBFB;
+	color: #666;
+}
+
+.button-login {
+	width: 89px;
+	height: 25px;
+	border: none;
+	color: #FBFBFB;
+	font-weight: bold;
+	background: #fff url("/images/login.jpg") no-repeat top left;
+}
+ 
+#error_login{
+	width: 360px;
+	height: auto;
+	margin: 55px 15px 0px 0px;
+	padding: 10px;
+	float: right;
+	font-size: 13px;
+	border: 1px solid #FF8C8C;
+	background-color: #FFcAFF;
+}
+ 
+#success, #noticeCategory {
+	width: 800px;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 5px;
+	color: #666;
+	margin: 0 auto;
+	background-color: #FAFFAF;
+	border: 2px solid #FFFF88;
+}
+ 
+.user-name-logged {
+	color: #fff;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#logged {
+	float: right;
+	width: auto;
+	padding-right: 10px;
+	color: #fff;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#logged a {
+	color: #fff;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+#pnlLoggedLinks li {
+	list-style: none;
+	display: inline;
+}
+#pnlLoggedLinks li a {
+	-moz-border-radius-bottomleft:0.5em;
+	-moz-border-radius-bottomright:0.5em;
+	-moz-border-radius-topleft:0.5em;
+	-moz-border-radius-topright:0.5em;
+	padding: 4px;
+	background: #CDEB8B;
+	font-weight: bold;
+	text-decoration: none;
+	color: #666;
+	margin-left: 2px;
+}
+#pnlLoggedLinks li a:hover {
+	background: #73880A;
+	color: #fff;
+}
+table.show-info-users {
+	width: 800px;
+	font-family: Arial, Helvetica, Sans-serif;
+	font-size: 13px;
+}
+table.show-info-users th {
+	width: 300px;
+	padding: 4px;
+	background: #EBEBEB;
+}
+table.show-info-users td {
+	padding: 4px;
+	border: 1px solid #EFEFEF;
+	text-align: center;
+}
+ 
+#pnlLogin label {
+	color: #666;
+}
+a.signup {
+	width: 100px;
+	padding: 1px 5px 1px 10px;
+	font-family: Arial, helvetica, sans-serif;
+	text-decoration: none;
+	background: #AEBC21;
+	border: 1px solid #8F9A1A;
+	color: white;
+}
+ 
+
+.errorExplanation h2 {
+	font-size: 15px;
+}
+.errorExplanation li {
+	list-style: none;
+}
+ 
+.error_access{
+	color: red;
+	font-family: Verdana, Helvetica, Sans-serif;
+}
+ 
+
+ 
+/* CATEGORY */
+
+#new-cateogry-validation {
+	width: 100%;
+}
+
+
+#formNewCategory {
+	background: #EFEFEF;
+	border-bottom: 2px solid #ccc;
+	padding: 5px;
+}
+
+#formNewCategory .field {
+	width: 350px;
+	font-size: 16px;
+}
+	
+
+#cart{
+	width: 400px;
+	height: 50px;
+	background-color: #AEEADD;
+	-moz-border-radius-bottomleft:0.5em;
+	-moz-border-radius-bottomright:0.5em;
+	-moz-border-radius-topleft:0.5em;
+	-moz-border-radius-topright:0.5em;
+	padding: 4px;
+}
+
+
+.list-products {
+	border-bottom: 1px solid #ebebeb;
+	min-height: 100px;
+	height: auto;
+	margin-bottom: 20px;
+	display: table;
+}
+
+
+.product-name {
+	font-size: 15px;
+	color: #356AA0;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+#sucess_edit_product{
+	color: #73880A;
+	font-weight: bold;
+}
+
+
+.product-description {
+	font-size: 12px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+/* --------------------------------------- VALIDACOES --------------------------------------- */
+#errorEditProduct {
+	background: #F9F7ED;
+	margin-bottom: 20px;
+	font-size: 12px;
+	color: #333;
+}
+	#errorEditProduct li {
+		list-style: none;
+	}
+	
+	#errorEditProduct h2 {
+		color: #B02B2C;
+		font-size: 15px;
+	}
+
+	#categoryValidation {
+		background: #F9F7ED;
+		margin-bottom: 20px;
+		font-size: 12px;
+		color: #333;
+		font-size: 13px;
+	}
+
+	#categoryValidation h2 {
+		color: #B02B2C;
+		font-size: 15px;
+	}
+
+
+/* --------------------------------------- PRODUTOS --------------------------------------- */
+
+#newProduct {
+	background: #EFEFEF;
+	border-bottom: 2px solid #ccc;
+	padding: 10px 5px 10px 5px;
+	color: #ccc;
+}
+#newProductValidation .errorExplanation {
+	background: #F9F7ED;
+	margin-bottom: 20px;
+	font-size: 12px;
+	color: #333;
+}
+#newProductValidation .errorExplanation h2 {
+	color: #B02B2C;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+
+/* --------------------------------------- TOTAL ORCAMENTOS --------------------------------------- */
+
+#nameBudgets {
+	background: #FFF;
+	height: 34px;
+	margin-bottom: 7px;
+	border-bottom: 1px solid #EBEBeB;
+	padding: 2px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	position: relative;
+}
+
+.realizado {
+	color: #666;
+}
+
+/* --------------------------------------- BUDGETS SHOW --------------------------------------- */
+
+table.grid {
+	width: 100%;
+	background: #Fff;
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+
+}
+
+table.grid td {
+	border: 1px solid #eeeeee;
+	padding: 5px;
+}
+
+table.grid tr.hover:hover {
+	background: #efefef;
+}
+
+table.grid th { background: #C3D9FF;  color: #333; padding: 5px; border: 1px solid #EFEFEF;}
+
+#showInfoTop {
+	padding: 5px;
+	background: #F9F7ED;
+	border-bottom: 1px solid #EBEBEB;
+	color: #666;
+	font-size: 14px;
+	position: relative;
+}
+
+.showGeneratePdf {
+	position: absolute;
+	right: 5px;
+}
+.showGeneratePdf a {
+	text-decoration:none;
+	color: #666;
+	font-size: 11px;
+	position:relative;
+	top: -3px;
+}
+.showColor {
+	color: #356AA0;
+}
+
+
+.product-categories {
+	font-size: 11px;
+	color: #666;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.product-actions {
+	height: 25px;
+	width: 80px;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.actions {
+	height: 31px;
+	width: 80px;
+	position: absolute;
+	bottom: 35px;
+	right: -80px;
+	background: url("/images/actions.png") no-repeat left top;
+	
+}
+
+.actions span {
+	position: relative;
+	left: 10px;
+}
+
+.actions a {
+	color: red;
+	font-size: 10px;
+}
+
+.list-products-photo {
+	float: left;
+	height: 100px;
+}
+
+.list-products-description {
+	width: 660px;
+	padding: 0px 5px 0px 5px;
+	float: right;
+	min-height: 100px;
+	height: auto;
+	position: relative;
+}
+
+#edit {
+	width: 660px;
+	float: right;
+	background: #EBEBEB;
+	height: auto;
+	position: relative;
+	margin-bottom: 20px;
+	border: 8px solid #FFFF88;
+}
+
+#edit label {
+	color: #333;
+	font-size: 11px;
+}
+
+span.cancelar a { color :red; font-size: 11px;}
+
+#textarea-right {
+	width: 350px;
+	float: right;
+}
+#input-left {
+	width: 280px;
+	float: left;
+}
+#edit-border {
+	width: 645px;
+	padding: 5px 5px 5px 5px;
+	border: 3px solid #C3D9FF;
+	display :table;
+}
+
+fieldset.ListProductCart{
+	padding: 10px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 15px;
+}
+
+p.WelcomeText{
+	width: 400px;
+	text-align: justify;
+	padding: 4px;
+	font-family: Verdana, sans-serif;
+}
+
+.navigation { font-size: 13px; font-weight: bold; text-transform: uppercase }
+
+#show_form_edit{
+	width: 280px;
+	height: 225px;
+	background-color: #C3D9FF;
+	margin: 10px;
+	padding: 20px;
+	font-size: 13px;
+}
+
+#show_form_edit input{
+	font-size: 13px;
+}
+
+
+
+.button_list{
+	color: red;
+}
+
+h3{
+	color:#4BE7DA;
+}
+
+
+
+#list_itens_budget{
+	width: 300px;
+	height: auto;
+	color: black;
+	background-color: #D9F0E8;
+	margin: 10px;
+	padding: 10px;
+	-moz-border-radius-bottomleft:0.5em;
+	-moz-border-radius-bottomright:0.5em;
+	-moz-border-radius-topleft:0.5em;
+	-moz-border-radius-topright:0.5em;
+}
+
+
+.titulos{
+	color:#626071;
+}
+
+#lista-users {
+
+}
+
+#name-users {
+	width: 300px;
+	background: #FFF;
+	height: 34px;
+	margin-bottom: 7px;
+	border-bottom: 1px solid #EBEBeB;
+	padding: 2px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+#name-users a, #nameBudgets a {
+	text-decoration: none;
+	color: #356AA0;
+}
+
+.tableNamesCategory {
+	background: #FFF;
+	height: 34px;
+	margin-bottom: 7px;
+	border-bottom: 1px solid #EBEBeB;
+	padding: 2px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	position :relative;
+}
+
+.styleDate {
+	font-size: 14px;
+	color: #999;
+	position: absolute;
+	right: 0px;
+}
+
+#mens {
+	color: #999;
+}
+
+.alignLoading {
+	position: relative;
+	top: 2px;
+	margin-right: 3px;
+}
+
+.title-users, .title-products {
+	padding: 5px;
+	background: #F9F7ED;
+	border-bottom: 1px solid #EBEBEB;
+	color: #666;
+	font-weight: bold;
+	position: relative;
+}
+
+.arrow-down {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+
+#name-users:hover {
+	background: #F9F7ED;	
+}
+
+#name-users small {
+	font-style:italic;
+	font-size: 13px;
+	color: #666;
+	font-family:"Times New Roman", Times, serif;
+}
+
+/* ------------------------------------------- EFEITOS AJAX ------------------------------------------- */
+.nameCategory {
+	color: #356AA0;
+	font-size: 14px;
+}

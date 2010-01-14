@@ -1,0 +1,6 @@
+if @product.update_attributes(params[:product])
+  page.hide "teste_#{dom_id(@product)}";
+  page.reload
+else
+  page.replace_html "notice_#{dom_id(@product)}", :partial => "error"
+end

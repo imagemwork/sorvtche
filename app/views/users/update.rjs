@@ -1,0 +1,6 @@
+if @user.update_attributes(params[:user])
+  page.hide "show_form_edit";
+  page.reload
+else
+  page.replace_html :notice, :partial => "error"
+end

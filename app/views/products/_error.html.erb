@@ -1,0 +1,9 @@
+<div id="errorEditProduct">
+	<h2><%= pluralize(@product.errors.count, "erro" ) %> </h2>
+	<br />
+	<ul>
+		<% @product.errors.each_full do |msg| -%>
+		   <li><%= msg %></li>
+	    <% end -%>
+ 	</ul>
+</div>

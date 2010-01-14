@@ -1,0 +1,47 @@
+<%= title_page("Produtos") %>
+
+<div class="title-users">
+	Novo Produto
+	<%= image_tag("arrow_down.png", :class => "arrow-down") %>
+</div>
+<br />
+
+<div id="newProduct">
+
+		  <% form_for :product , @product, :url => {:controller => :products, :action => :create}, :html => { :multipart => true } do |f| %>
+		  
+			<div id="newProductValidation"><%= f.error_messages %></div>
+
+		  	  <p>
+			    <%= f.label :código %><br />
+			    <%= f.text_field :code %>
+			  </p><br />
+			  <p>
+			    <%= f.label :nome %><br />
+			    <%= f.text_field :name %>
+			  </p><br />
+			  <p>
+			    <%= f.label :peso %><br />
+			    <%= f.text_field :weight %>
+			  </p><br />
+
+			  <p>
+				<%= f.label :Imagem %><br />
+				<%= f.file_field :picture, :size => 30 %>
+			  </p><br />
+			  <p>
+				-----------------------------------------------------------------<br /> 
+			    <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => "Selecione uma categoria" %>
+			  	<br />-----------------------------------------------------------------
+			</p><br />
+			 
+		  	  <p>
+			    <%= f.label :ingredientes %><br />
+			    <%= f.text_area :ingredients %>
+			  </p>
+			<br />
+		<%= f.submit 'Criar' %>
+
+		<% end %>
+
+</div>

@@ -1,0 +1,20 @@
+<%= title_page("Categorias") %>
+
+<div class="title-users">
+	Nova Categoria
+	<%= image_tag("arrow_down.png", :class => "arrow-down") %>
+</div>
+
+<br />
+<div id="categoryValidation">
+	
+</div>
+	<div id="formNewCategory">
+		<%= render :partial => "form" %>
+	</div>
+<br /><br />
+
+<div id="categories">
+	<%= render :partial => 'category', :collection => @categories %>
+</div>
+

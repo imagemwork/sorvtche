@@ -1,0 +1,13 @@
+<% unless logged_in? -%>
+
+	<%= link_to "Logar",  login_path,  { :title => "Log in" } %><br />
+	<%= link_to "Cadastar", signup_path, { :title => "Create an account" } %>
+	
+<% else -%>
+
+	<div id="pnlLoggedTop">
+		<b>Olá</b> <%= link_to_current_user :content_method => :login %>, 
+		<%= link_to "Sair", logout_path, { :title => "Log out" } %>
+	</div>
+	
+<% end -%>

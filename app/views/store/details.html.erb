@@ -1,0 +1,55 @@
+<h1>Detalhes do seu Orçamento.</h1>
+
+<h4><%= link_to "Voltar para Lista de Produtos", :controller => "store", :action => "index"%></h4> 
+<br />
+<div id="CartEmpty">
+	<%= render :partial => 'cart_empty' %>
+</div>
+<br />
+
+<% if @cart.contar_total == 0 %>
+<table style="display:none" id="table_itens"border="1" cellspacing="0" cellpadding="0">
+<% else %>
+<table id="table_itens"border="1" cellspacing="0" cellpadding="0", class="grid">
+<% end -%>
+<tr>
+	<th>Deletar Todos</th>
+	<th>Produto</th>
+	<th>Quantidade Itens</th>
+	<th>Caixa</th>
+</tr>
+	<% for @cart_item in @cart.items %>
+		<tr id="<%=@cart_item.product.id %>"
+			<td>
+				<div id="button_<%= @cart_item.product.id %>">
+					<% form_remote_tag :url => {:action => :delete_all_products, :id => @cart_item.product.id} do %>
+						<%= image_submit_tag("remove_all.png") %>
+					<% end -%>
+				</div>
+			</td>
+			<td>
+				<%= @cart_item.name %>
+			</td>
+			<td>
+				<%= @cart_item.quantidade_itens %>
+			</td>
+			<td>
+				<%= @cart_item.quantidade_caixas %>
+			</td>
+		</tr>
+			<% end -%>
+
+</table>
+<br />
+
+<br />
+<div id="TotalDetails">
+	<%= render :partial => "total_details"%>
+</div><br />
+
+<div id="ButtonEnd">
+	<% if @cart.contar_total > 0 %>
+		<%= render "botao"%>
+	<% end -%>
+</div>
+

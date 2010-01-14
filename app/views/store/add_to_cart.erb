@@ -1,0 +1,15 @@
+<fieldset>
+	<legend>Meus Produtos</legend>
+	<% for cart_item in @cart.items %>
+		<li><b><%= cart_item.quantity %></b> - <%= cart_item.name%></li>
+	<% end -%>
+</fieldset>
+
+<% for product in @products %> 
+	<p><%= product.name %> | <%= link_to "Add", :action => :add_to_cart, :id => product %></p>
+	<p><%= link_to "Remover Item", :action => :remove_to_cart, :id => product %>
+
+<% end -%>
+<div id="ButtonEnd">
+	<%= render "botao"%>
+</div>

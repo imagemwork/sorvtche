@@ -1,0 +1,37 @@
+<% @total = 0%>
+
+<div id="showInfoTop">
+		Número:  <span class="showColor"><%= @order.id %></span> <b>/</b>
+		Cliente: <span class="showColor"><%= @order.user.name %></span> <b>/</b> 
+		Realizado: <span class="showColor"><%=  data_bonita(@order.created_at) %></span>
+
+		<span class="showGeneratePdf">
+			<%= link_to "Exportar Como PDF", :controller => "budgets", :action => "show", :id=> @order.id, :format => :pdf%> <%= image_tag("pdf.png") %>
+		</span>
+</div>
+
+
+<table border="0" cellspacing="0" cellpadding="0" class="grid">
+	<tr>
+		<th>Produto</th>
+		<th>Categoria</th>
+		<th>Quant. Itens</th>
+		<th>Quant. Caixas</th>
+	</tr>
+
+	<% @linesItems.each do |line| %>
+	<% @total += line.item_quantity + line.box_quantity %>	
+	<tr align='center' class="hover">
+		<td width=''> <%= line.product.name %> </td>
+		<td width=''> <%= line.product.category.name %> </td>
+		<td widht=''> <%= line.item_quantity %> </td>
+		<td width=''> <%= line.box_quantity %> </td>
+	</tr>
+	<% end -%>
+	<tr>
+		<td></td>
+		<td></td>
+		<td align="center"><h2>TOTAL</h2></td>
+		<td align="center"><h2><%= @total %></h2></td>
+	</tr>
+</table><br />

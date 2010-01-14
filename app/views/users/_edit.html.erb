@@ -1,0 +1,27 @@
+<b> Atualize suas informações... </b>
+<% form_remote_for @user, :url => {:controller => "users", :action => "update"} do |f|%>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :Endereco %><br />
+    <%= f.text_field :andress %>
+  </p>
+ <p>
+    <%= f.label :Cidade %><br />
+    <%= f.text_field :city %>
+  </p>
+ <p>
+    <%= f.label :Estado %><br />
+    <%= f.text_field :state %>
+  </p>
+ <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p><br />
+    <%= f.submit 'Atualizar' %>
+  </p>
+
+<% end %>

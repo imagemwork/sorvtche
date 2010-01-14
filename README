@@ -1,0 +1,10 @@
+
+-- Projeto Sistema de orçamento Sorvtche - 06-10-09
+
+-- Agora tem um pequeno script ruby na raiz para quando se deleta muitos arquivos no git, apos remover os arquivos rode:
+	ruby git_del_files.rb
+	e de o commit
+	
+-- Versao: 1.0 Finalizada
+
+-- Next Steps: Better Design

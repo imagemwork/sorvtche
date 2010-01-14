@@ -1,0 +1,29 @@
+<html>
+	
+	<head>
+		<title><Run Fools/title>
+		<%= stylesheet_link_tag "login" %>
+	</head>
+	<body>
+		<div id="all">
+			<div id="bar-top">
+				<p>Sistema de Orçamentos</p>
+			</div>
+			
+			<% unless flash[:error].blank? %>
+				<div id="error">
+					<p><%= image_tag("error.png", :class => "error-message") %> <%= flash[:error] %></p>
+				</div>
+			<% end %>
+			
+			
+			
+			<div id="login-inicio">
+				<%= yield %>
+			</div>
+			<div id="footer">
+			Nomes aqui - 2010
+			</div>
+		</div>
+	</body>
+</html>

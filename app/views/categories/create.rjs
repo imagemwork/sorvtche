@@ -1,0 +1,13 @@
+if @flag == true
+  page.replace_html  :categoryValidation, :partial => "error"
+else
+  page.hide :categoryValidation
+  page.insert_html :bottom, :categories, :partial => 'category', :object => @category 
+  page.replace_html :noticeCategory, flash[:noticeCategory]
+  page[:category_form].reset
+  page.show "noticeCategory"
+  page.visual_effect :highlight, "category_#{@category.id}", :duration => 3, :startcolor => "#FAFFAF", :endcolor => "#eeeeee"
+  page.delay(2.0) do
+        page.hide :noticeCategory
+    end
+end

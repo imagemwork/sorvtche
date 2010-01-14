@@ -1,0 +1,10 @@
+<div id="errorExplanation" class="errorExplanation">
+	
+	<h2><%= @user.errors.count %> erros encontrados. </h2>
+		<p>Ha problemas com os seguites campoos:</p>
+	<ul>
+		<% @user.errors.each_full do |msg| -%>
+		   <li><%= msg %></li>
+	    <% end -%>
+ 	</ul>
+</div>

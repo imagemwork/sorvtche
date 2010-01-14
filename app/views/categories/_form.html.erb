@@ -1,0 +1,6 @@
+<% form_remote_for @category, :html => {:id => "category_form"} do |f| %>
+ <%= f.error_messages %>
+<p>
+    <%= f.text_field :name, :class => "field" %> <%= f.submit 'Criar' %>
+  </p>
+<% end %>

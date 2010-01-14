@@ -1,0 +1,42 @@
+pt-BR:
+  activerecord:
+    models:
+      product: "Produto"
+      user: "Usuario"
+    attributes:
+      product:
+        name: "Nome"
+        ingredients: "Ingredientes"
+        weight: "Peso"
+        code: "Código"
+        picture: "Imagem"
+        category_id: "Categoria"
+      user:
+          name: "Nome"
+          city: "Cidade"
+          password: "Senha"
+          password_confirmation: "Confirmacao de senha"
+          andress: "Endereço"
+          state: "Estado"
+    
+        
+    errors:
+      template:
+        header:
+          one: "{{model}} Não posso salvar: 1 erro"
+          other: "{{model}} não pôde ser salvo: {{count}} erros."
+        body: "Por favor, verefique os seguintes campos em destaque:"
+      messages:
+        inclusion: "não está incluso na lista"
+        exclusion: "não está disponível"
+        invalid: "não é válido"
+        confirmation: "não bate com a confirmação"
+        accepted: "precisa ser aceito"
+        empty: "não pode ser vazio"
+        blank: "não pode ser vazio"
+        too_long: "é muito longo (não mais do que {{count}} caracteres)"
+        too_short: "é muito curto (não menos do que {{count}} caracteres)"
+        wrong_length: "não é do tamanho correto (precisa ter {{count}} caracteres)"
+        taken: "já esta cadastrado"
+        not_a_number: "não é um número"
+        greater_than: "precisa ser maior do que {{count}}"

@@ -1,0 +1,70 @@
+<div class="title-products">
+	Produtos Cadastrados
+	<%= image_tag("arrow_down.png", :class => "arrow-down") %>
+</div>
+
+<br /><br />
+
+
+
+<% unless @products.size > 0 %>
+	<b>Nenhum produto cadastrado até o momento, clique em <i>Novo Produto</i> para cadastrar um.</b>
+<% else -%>
+
+
+<% @products.each do |@product| %>
+
+		<div id="<%= dom_id(@product) %>" class="list-products">
+
+
+			<div class="list-products-photo">
+				<%= image_tag @product.picture.url(:thumb) %>		
+			</div>
+		
+			<div class="list-products-description" onmouseover="ShowEdit('<%= dom_id(@product) %>')" onmouseout = "HideEdit('<%= dom_id(@product) %>')">
+			
+				<div class="product-name">
+				<%= @product.code %> - <%= @product.name %>
+				<% unless flash["notice_#{@product.id}"].blank? %>
+					<span id="sucess_edit_product">
+						<%= flash["notice_#{@product.id}"] %>
+					</span>
+				<% end %>	
+					
+				</div>
+				<div class="product-categories"><%= @product.category.name %></div>
+			
+				<div class="product-description"><%= @product.ingredients %></div>
+				
+
+				
+
+					<div id="edit_product_<%= dom_id(@product) %>" style="display:none" class="actions">
+						<span>
+						<%= link_to_remote image_tag("trash_small.png", :border	=> "0"), :url => product_path(@product) , 
+								:confirm => 'Voce tem certeza que deseja deletar esse produto.',
+								:method => :delete
+						%> 
+						<%= link_to_remote "Editar", :url =>{:action => 'show_edit_product', :id => @product.id } %>
+						</span>
+					</div>
+				
+			
+			</div>
+			
+				<div id="teste_<%= dom_id(@product) %>" style="display:none;">
+					<div id="edit">
+						<div id="edit-border">
+							<div id="notice_<%= dom_id(@product) %>"></div>
+							<%= render :partial => 'edit_product', :locals => {:p => @product}%>
+						</div>
+					</div>
+				</div>
+				
+	
+		</div>
+		
+<% end -%>
+
+<% end -%>
+

@@ -1,0 +1,37 @@
+<%= title_page("Usuários") %>
+
+<h2 class="h2-login">Olá <%= @user.login %> | <%= link_voltar("Voltar") %></h2>
+<small>Visualize suas informações cadastradas.</small>
+
+<br />	
+<br />
+
+<table border="0" class="show-info-users">
+	<tr>
+		<th>Login</th>
+		<th>Endereço</th>
+		<th>Cidade</th>
+		<th>Estado</th>
+		<th>E-mail</th>
+	</tr>
+	<tr>
+		<td><%=  @user.login %></td>
+		<td><%=  @user.andress %></td>
+		<td><%=  @user.city %></td>
+		<td><%=  @user.state %></td>
+		<td><%=  @user.email %></td>
+	</tr>
+</table>
+<br />
+
+<% if current_user.name ==  @user.name %>
+	<%= link_to_remote "Editar Informações", :url => "show_form_edit" %>	
+<% else -%>
+	<%= "Editar Informações (Disabilitado)" %>
+<% end -%>
+<div id="show_form_edit" style="display:none">
+	<div id="notice">
+		
+	</div>
+	<%= render :partial => 'edit' %>
+</div>

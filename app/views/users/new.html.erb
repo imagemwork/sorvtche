@@ -1,0 +1,44 @@
+<div class="h2-login-align">
+	<h2 class="h2-login">Cadastro | <%= link_voltar("Voltar") %></h2>
+	<small>Cadastre seus dados para poder usar nosso sistema.</small>
+</div>
+<br />
+
+<% @user.password = @user.password_confirmation = nil %>
+<%= error_messages_for :user %>
+
+<div id="form-login-new">
+	<% form_for :user, :url => users_path do |f| -%>
+	
+	<p><%= label_tag 'login' %><br/>
+	<%= f.text_field :login, :class => "form-signup" %></p>
+	<br />
+	<p><%= label_tag 'e-mail' %><br/>
+	<%= f.text_field :email, :class => "form-signup" %></p>
+	<br />
+	<p><%= label_tag 'nome' %><br/>
+	<%= f.text_field :name, :class => "form-signup" %></p>
+	<br />
+	<p><%= label_tag 'senha' %><br/>
+	<%= f.password_field :password, :class => "form-signup" %></p>
+	<br />
+	<p><%= label_tag 'Confirme a Senha' %><br/>
+	<%= f.password_field :password_confirmation, :class => "form-signup" %></p>
+	<br />
+	<p>
+		<%= label_tag 'city', 'Cidade' %><br/>
+		<%= f.text_field :city, :class => "form-signup" %>
+	</p>
+	<br />
+	<p>
+		<%= label_tag 'state', 'UF:' %><br />
+		<%= f.text_field :state, :class => "form-signup" %>
+	</p>
+	<br />
+	<p><%= label_tag 'andress', 'Endereço' %><br/>
+		<%= f.text_field :andress, :class => "form-signup" %></p>
+	<br />
+	<p><%= submit_tag 'Cadastrar', :class => "button-login" %></p>
+
+<% end -%>
+</div>
