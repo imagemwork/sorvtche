@@ -7,7 +7,6 @@
 	<div id="<%= dom_id(category) %>" class="nameCategory">
 		<%= link_to_remote image_tag("trash_small.png", :border	=> "0"), :url => category_path(category), 
 				:confirm => 'Voce tem certeza que deseja deletar esse produto.',
-				:loading => "$('#showLoading#{dom_id(category)}').show()",
 				:method => :delete
 		%>
 		<%= category.name %>
