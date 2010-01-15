@@ -10,7 +10,7 @@
 		</span>
 </div>
 
-
+<br />
 <table border="0" cellspacing="0" cellpadding="0" class="grid">
 	<tr>
 		<th>Produto</th>
@@ -22,8 +22,12 @@
 	<% @total += @line.item_quantity + @line.box_quantity %>	
 	<tr align='center' class="hover">
 		<% if @line.product == nil %>
-			<br /><h3>Erro ao exibir orçamento. </h3><br />
-			<p>Esse ocorre quando algum produto que estava relacionado com algum orçamento é deletado. </p><br />
+		<br />
+			<div id="showErrorNil">
+				<h2>Erro ao exibir orçamento. </h2>
+				<p>Esse ocorre quando algum produto que estava relacionado com algum orçamento é deletado.</p>
+			</div>
+		<br />
 		<% else %>
 			<td width=''> <%= @line.product.name %> </td>
 			<td width=''> <%= @line.product.category.name   %> </td>
@@ -32,13 +36,13 @@
 		<% end -%>
 	</tr>
 	<% end -%>
-	
 	<% unless @line.product == nil%>
-	<tr>
-		<td></td>
-		<td></td>
-		<td align="center"><h2>TOTAL</h2></td>
-		<td align="center"><h2><%= @total %></h2></td>
-	</tr>
-</table><br />
+		<tr>
+			<td></td>
+			<td></td>
+			<td align="center"><h2>TOTAL</h2></td>
+			<td align="center"><h2><%= @total %></h2></td>
+		</tr>
+	</table><br /><br />
 <% end -%>
+<br />

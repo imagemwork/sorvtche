@@ -36,10 +36,11 @@ a {	color: black; }
 
 #pnlLogin {
 	width: 800px;
+	min-height: 300px;
 	height: auto;
 	margin: 0px auto;
 	padding: 10px;
-	display: table;
+
 	background: #fff;
 }
 
@@ -188,21 +189,7 @@ ul.menu-admin li a {
 	background: #73880A;
 	color: #fff;
 }
-table.show-info-users {
-	width: 800px;
-	font-family: Arial, Helvetica, Sans-serif;
-	font-size: 13px;
-}
-table.show-info-users th {
-	width: 300px;
-	padding: 4px;
-	background: #EBEBEB;
-}
-table.show-info-users td {
-	padding: 4px;
-	border: 1px solid #EFEFEF;
-	text-align: center;
-}
+
  
 #pnlLogin label {
 	color: #666;
@@ -402,6 +389,32 @@ table.grid th { background: #C3D9FF;  color: #333; padding: 5px; border: 1px sol
 	color: #356AA0;
 }
 
+#showErrorNil {
+	background: #36393D;
+	border: 1px solid #B02B2C;
+	color: #fff;
+	font-size: 12px;
+	padding: 10px;
+}
+
+
+/* --------------------------------------- USERS SHOW --------------------------------------- */
+
+#showUsers label {
+	font-weight: bold;
+	color: #333;
+	float: left;
+	width: 8em;
+	font-size: 13px;
+}
+
+#showUsers {
+	color: #666;
+	font-size :18px;
+}
+
+
+
 
 .product-categories {
 	font-size: 11px;
@@ -516,12 +529,6 @@ p.WelcomeText{
 .button_list{
 	color: red;
 }
-
-h3{
-	color:#4BE7DA;
-}
-
-
 
 #list_itens_budget{
 	width: 300px;

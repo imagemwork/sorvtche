@@ -1,27 +1,36 @@
 <%= title_page("Usuários") %>
 
-<h2 class="h2-login">Olá <%= @user.login %> | <%= link_voltar("Voltar") %></h2>
-<small>Visualize suas informações cadastradas.</small>
+<div class="title-users">
+	Olá <i><%= @user.login %></i>
+	<%= image_tag("arrow_down.png", :class => "arrow-down") %>
+</div>
 
-<br />	
 <br />
 
-<table border="0" class="show-info-users">
-	<tr>
-		<th>Login</th>
-		<th>Endereço</th>
-		<th>Cidade</th>
-		<th>Estado</th>
-		<th>E-mail</th>
-	</tr>
-	<tr>
-		<td><%=  @user.login %></td>
-		<td><%=  @user.andress %></td>
-		<td><%=  @user.city %></td>
-		<td><%=  @user.state %></td>
-		<td><%=  @user.email %></td>
-	</tr>
-</table>
+<div id="showUsers">
+
+		<%= label_tag("Login") %>
+		<%= @user.login %>
+		
+		<br />
+		<%= label_tag("Endereço") %>
+		<%=  @user.andress %>
+		
+		<br />
+		<%= label_tag("Cidade") %>
+		<%=  @user.city %>
+		
+		<br />
+		<%= label_tag("Estado") %>
+		<%=  @user.state %>
+		
+		<br />
+		<%= label_tag("E-mail") %>
+		<%=  @user.email %>
+		
+</div>
+
+
 <br />
 
 <% if current_user.name ==  @user.name %>
