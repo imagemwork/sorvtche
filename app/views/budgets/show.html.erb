@@ -18,16 +18,22 @@
 		<th>Quant. Itens</th>
 		<th>Quant. Caixas</th>
 	</tr>
-
-	<% @linesItems.each do |line| %>
-	<% @total += line.item_quantity + line.box_quantity %>	
+	<% @linesItems.each do |@line| %>
+	<% @total += @line.item_quantity + @line.box_quantity %>	
 	<tr align='center' class="hover">
-		<td width=''> <%= line.product.name %> </td>
-		<td width=''> <%= line.product.category.name %> </td>
-		<td widht=''> <%= line.item_quantity %> </td>
-		<td width=''> <%= line.box_quantity %> </td>
+		<% if @line.product == nil %>
+			<br /><h3>Erro ao exibir orçamento. </h3><br />
+			<p>Esse ocorre quando algum produto que estava relacionado com algum orçamento é deletado. </p><br />
+		<% else %>
+			<td width=''> <%= @line.product.name %> </td>
+			<td width=''> <%= @line.product.category.name   %> </td>
+			<td widht=''> <%= @line.item_quantity   %> </td>
+			<td width=''> <%= @line.box_quantity  %> </td>
+		<% end -%>
 	</tr>
 	<% end -%>
+	
+	<% unless @line.product == nil%>
 	<tr>
 		<td></td>
 		<td></td>
@@ -35,3 +41,4 @@
 		<td align="center"><h2><%= @total %></h2></td>
 	</tr>
 </table><br />
+<% end -%>
