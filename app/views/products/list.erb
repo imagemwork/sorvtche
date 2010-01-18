@@ -25,6 +25,9 @@
 			
 				<div class="product-name">
 				<%= @product.code %> - <%= @product.name %>
+				<span id="loading_<%= dom_id(@product) %>" class="loading-edit" style="display: none">
+					<%= image_tag("loading.gif") %>
+				</span>
 				<% unless flash["notice_#{@product.id}"].blank? %>
 					<span id="sucess_edit_product">
 						<%= flash["notice_#{@product.id}"] %>
@@ -37,17 +40,18 @@
 				<div class="product-description"><%= @product.ingredients %></div>
 				
 
-				
 
 					<div id="edit_product_<%= dom_id(@product) %>" style="display:none" class="actions">
 						<span>
-						<%= link_to_remote image_tag("trash_small.png", :border	=> "0"), :url => product_path(@product) , 
+						<%= link_to_remote image_tag("trash_small.png", :border	=> "0"), :url => product_path(@product),
 								:confirm => 'Voce tem certeza que deseja deletar esse produto.',
 								:method => :delete
 						%> 
 						<%= link_to_remote "Editar", :url =>{:action => 'show_edit_product', :id => @product.id } %>
 						</span>
 					</div>
+				
+
 				
 			
 			</div>

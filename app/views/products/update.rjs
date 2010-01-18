@@ -1,5 +1,9 @@
 if @product.update_attributes(params[:product])
+  page.show "loading_#{dom_id(@product)}"
   page.hide "teste_#{dom_id(@product)}";
+  page.delay(1.0) do
+      page.hide "loading_#{dom_id(@product)}"
+  end
   page.reload
 else
   page.replace_html "notice_#{dom_id(@product)}", :partial => "error"

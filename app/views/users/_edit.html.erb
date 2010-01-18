@@ -1,6 +1,11 @@
-<b> Atualize suas informações... </b>
+<div id="borda">
+	
+	<div id="notice">
+		
+	</div>
+	
 <% form_remote_for @user, :url => {:controller => "users", :action => "update"} do |f|%>
-  <%= f.error_messages %>
+ 
   <p>
     <%= f.label :login %><br />
     <%= f.text_field :login %>
@@ -25,3 +30,4 @@
   </p>
 
 <% end %>
+</div>

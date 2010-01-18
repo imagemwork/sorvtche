@@ -36,11 +36,9 @@
 <% if current_user.name ==  @user.name %>
 	<%= link_to_remote "Editar Informações", :url => "show_form_edit" %>	
 <% else -%>
-	<%= "Editar Informações (Disabilitado)" %>
+	<p style="color: #ccc; font-weight: bold">Editar Informações (Desabilitado) </p>
 <% end -%>
 <div id="show_form_edit" style="display:none">
-	<div id="notice">
-		
-	</div>
+
 	<%= render :partial => 'edit' %>
 </div>

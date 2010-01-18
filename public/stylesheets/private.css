@@ -58,6 +58,8 @@ ul.menu-admin {
 	bottom: 3px;
 	right: 10px;
 	float: right;
+	font-family: "Lucida Grande",arial,sans-serif;
+	font-size: 15px;
 }
 
 ul.menu-admin-left {
@@ -66,6 +68,8 @@ ul.menu-admin-left {
 	position: absolute;
 	bottom: 3px;
 	left: 10px;
+	font-family: "Lucida Grande",arial,sans-serif;
+
 }
 
 ul.menu-admin-left li {
@@ -77,8 +81,7 @@ ul.menu-admin-left li {
 ul.menu-admin-left li a {
 	color: white;
 	text-decoration: none;
-	font-weight: bold;
-	font-size: 11px;
+	font-size: 12px;
 }
 
 ul.menu-admin li {
@@ -90,8 +93,7 @@ ul.menu-admin li {
 ul.menu-admin li a {
 	color: white;
 	text-decoration: none;
-	font-weight: bold;
-	font-size: 11px;
+	font-size: 12px;
 }
 
 #form-login {
@@ -410,10 +412,13 @@ table.grid th { background: #C3D9FF;  color: #333; padding: 5px; border: 1px sol
 
 #showUsers {
 	color: #666;
-	font-size :18px;
+	font-size :19px;
 }
 
-
+.loading-edit {
+	position: relative;
+	top: 2px;
+}
 
 
 .product-categories {
@@ -464,6 +469,47 @@ table.grid th { background: #C3D9FF;  color: #333; padding: 5px; border: 1px sol
 	position: relative;
 }
 
+#show_form_edit{
+	width: 400px;
+	background: #EBEBEB;
+	height: auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border: 8px solid #FFFF88;
+}
+
+#borda {
+	width: 385px;
+	padding: 5px 5px 5px 5px;
+	border: 3px solid #C3D9FF;
+	display :table;
+}
+
+
+#notice {
+	background: #F9F7ED;
+	margin-bottom: 20px;
+	font-size: 12px;
+	color: #333;
+}
+
+#notice li {
+	list-style: none;
+}
+
+#notice h2 {
+	color: #B02B2C;
+	font-size: 15px;
+}
+
+#edit-border {
+	width: 645px;
+	padding: 5px 5px 5px 5px;
+	border: 3px solid #C3D9FF;
+	display :table;
+}
+
+
 #edit {
 	width: 660px;
 	float: right;
@@ -489,12 +535,6 @@ span.cancelar a { color :red; font-size: 11px;}
 	width: 280px;
 	float: left;
 }
-#edit-border {
-	width: 645px;
-	padding: 5px 5px 5px 5px;
-	border: 3px solid #C3D9FF;
-	display :table;
-}
 
 fieldset.ListProductCart{
 	padding: 10px;
@@ -511,14 +551,7 @@ p.WelcomeText{
 
 .navigation { font-size: 13px; font-weight: bold; text-transform: uppercase }
 
-#show_form_edit{
-	width: 280px;
-	height: 225px;
-	background-color: #C3D9FF;
-	margin: 10px;
-	padding: 20px;
-	font-size: 13px;
-}
+
 
 #show_form_edit input{
 	font-size: 13px;

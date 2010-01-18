@@ -35,6 +35,8 @@
 	    <%= f.text_area :ingredients, :rows => "5", :cols => "40" %>
 	 	<br /><br />
 		<%= f.submit 'Atualizar' %> ou <span class="cancelar"><%= link_to_remote "Cancelar", :url => {:action => 'close_box_edit', :id => p.id } %></span>
+
+		
 	</div>
 
 

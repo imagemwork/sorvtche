@@ -1,1 +1,2 @@
+
 page.show "teste_#{dom_id(@product)}"
