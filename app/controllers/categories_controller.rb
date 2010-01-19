@@ -1,8 +1,9 @@
 class CategoriesController < ApplicationController
-  # GET /categories
-  # GET /categories.xml
+
   include AuthenticatedSystem
   before_filter :login_required
+  before_filter :authorized_admin?
+
   layout "private"
   def index
     @categories = Category.all
@@ -13,8 +14,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # GET /categories/1
-  # GET /categories/1.xml
   def show
     @category = Category.find(params[:id])
 
@@ -24,8 +23,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # GET /categories/new
-  # GET /categories/new.xml
+
   def new
     @categories = Category.all
     @category = Category.new
@@ -39,8 +37,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
   end
 
-  # POST /categories
-  # POST /categories.xml
+
   def create
     @category = Category.new(params[:category])
     @flag = false
@@ -58,8 +55,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # PUT /categories/1
-  # PUT /categories/1.xml
   def update
     @category = Category.find(params[:id])
 
@@ -73,8 +68,6 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # DELETE /categories/1
-  # DELETE /categories/1.xml
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
@@ -83,4 +76,12 @@ class CategoriesController < ApplicationController
     	format.js
     end
   end
+  
+  private
+  def authorized_admin?
+    unless current_user and current_user.is_admin == true
+      render :error_page
+    end
+  end
+  
 end
