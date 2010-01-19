@@ -64,9 +64,14 @@
 				<li><%= link_to "Nova Categoria", new_category_path %></li>
 			</ul>
 		<% elsif logged_in? %>
+			<ul class="menu-admin-left">
+				<li><%= link_to "Home", orders_url%></li>
+				<li><%= link_to "Produtos" %></li>
+				<li><%= link_to "Orçamentos" %></li>
+			</ul>
 			<ul class="menu-admin">
-				<li>Home</li>
-				<li>Novo produto</li>
+				<li><%= link_to "Novo Produto" %></li>
+				<li><%= link_to "Nova Categoria" %></li>
 			</ul>
 		<% end %>
 	</div>

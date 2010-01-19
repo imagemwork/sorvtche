@@ -542,13 +542,6 @@ fieldset.ListProductCart{
 	font-size: 15px;
 }
 
-p.WelcomeText{
-	width: 400px;
-	text-align: justify;
-	padding: 4px;
-	font-family: Verdana, sans-serif;
-}
-
 .navigation { font-size: 13px; font-weight: bold; text-transform: uppercase }
 
 
@@ -653,6 +646,44 @@ p.WelcomeText{
 	color: #666;
 	font-family:"Times New Roman", Times, serif;
 }
+
+
+/* ------------------------------------------- STEPS ------------------------------------------- */
+#allSteps {
+	width: 800px;
+	height: auto;
+	display: table;
+	background: #FFF;
+	text-align: justify;
+	color: #666;
+}
+#step1 {
+	width: 230px;
+	height: 100px;
+	float: left;
+	background: #FFF;
+	padding: 15px;
+}
+#step2 {
+	width: 230px;
+	height: 100px;
+	float: left;
+	background: #FFF;
+	padding: 15px;
+}
+#step3 {
+	width: 230px;
+	height: 100px;
+	float: left;
+	background: #FFF;
+	padding: 15px;
+}
+.itens_img {
+	position: relative;
+	top: 1.5px;
+}
+/* ------------------------------------------- FIM STEPS ------------------------------------------- */
+
 
 /* ------------------------------------------- EFEITOS AJAX ------------------------------------------- */
 .nameCategory {

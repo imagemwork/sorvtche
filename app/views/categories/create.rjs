@@ -6,7 +6,7 @@ else
   page.replace_html :noticeCategory, flash[:noticeCategory]
   page[:category_form].reset
   page.show "noticeCategory"
-  page.visual_effect :highlight, "category_#{@category.id}", :duration => 3, :startcolor => "#FAFFAF", :endcolor => "#eeeeee"
+  page.visual_effect :highlight, "category_#{@category.id}", :duration => 3, :startcolor => "#FAFFAF", :endcolor => "#FFFFFF"
   page.delay(2.0) do
         page.hide :noticeCategory
     end
