@@ -1,7 +1,9 @@
-<h1>Detalhes do seu Orçamento.</h1>
+<div id="bar-top-titles">
+	Detalhes do Orçamento - <%= link_to "Voltar para Lista de Produtos", :controller => "store", :action => "index"%>
+</div>
 
-<h4><%= link_to "Voltar para Lista de Produtos", :controller => "store", :action => "index"%></h4> 
-<br />
+<br /><br />
+
 <div id="CartEmpty">
 	<%= render :partial => 'cart_empty' %>
 </div>
@@ -10,42 +12,43 @@
 <% if @cart.contar_total == 0 %>
 <table style="display:none" id="table_itens"border="1" cellspacing="0" cellpadding="0">
 <% else %>
-<table id="table_itens"border="1" cellspacing="0" cellpadding="0", class="grid">
+<table id="table_itens" border="0" cellspacing="0" cellpadding="0">
 <% end -%>
 <tr>
-	<th>Deletar Todos</th>
+	<th>Deletar</th>
 	<th>Produto</th>
-	<th>Quantidade Itens</th>
+	<th>Qnt. Itens</th>
 	<th>Caixa</th>
 </tr>
 	<% for @cart_item in @cart.items %>
 		<tr id="<%=@cart_item.product.id %>"
-			<td>
+			<td width="1%">
 				<div id="button_<%= @cart_item.product.id %>">
 					<% form_remote_tag :url => {:action => :delete_all_products, :id => @cart_item.product.id} do %>
-						<%= image_submit_tag("remove_all.png") %>
+						<%= image_submit_tag("remove.png") %>
 					<% end -%>
 				</div>
 			</td>
 			<td>
 				<%= @cart_item.name %>
 			</td>
-			<td>
+			<td width="10%">
 				<%= @cart_item.quantidade_itens %>
 			</td>
-			<td>
+			<td width="3%">
 				<%= @cart_item.quantidade_caixas %>
 			</td>
 		</tr>
-			<% end -%>
 
+			<% end -%>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><b>TOTAL</b></td>
+				<td><%= render :partial => "total_details"%></td>
+			</tr>
 </table>
 <br />
-
-<br />
-<div id="TotalDetails">
-	<%= render :partial => "total_details"%>
-</div><br />
 
 <div id="ButtonEnd">
 	<% if @cart.contar_total > 0 %>

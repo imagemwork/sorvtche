@@ -4,7 +4,7 @@ class StoreController < ApplicationController
   layout "private"
 
   def index
-      @products = Product.all
+      @products = Product.paginate :page => params[:page], :per_page => 2
       @cart = find_cart
   end
  

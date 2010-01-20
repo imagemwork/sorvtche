@@ -1,7 +1,11 @@
 page.replace_html :total, pluralize(@cart.contar_total, "iten") 
 if( (@quantidade == 0) or ( @quantidade < 0) )
-   page.replace_html "msg_error_#{@product.id}", "<li><b>Deve ter algum valor</b></li>"
-   page[:quantidade].focus
+   page.replace_html "msg_error_#{@product.id}", "<div class='erro_add_product'>Deve ter algum valor!</div>"
+   page["quantidade_#{@product.id}"].focus
+   page.delay(2.0) do
+     page.hide "msg_error_#{@product.id}"
+   end
+   page.show "msg_error_#{@product.id}"
 else
   page.replace_html "msg_error_#{@product.id}", ""
   page["quantidade_form_#{@product.id}"].reset

@@ -8,10 +8,6 @@ body {
 	font-size: 13px;
 }
 
-h1 {
-	color: #44E4DA;
-	font-size: 22px;
-}
 .h2-login {
 	font-family: Arial, Helvetica, Sans-serif;
 }
@@ -239,7 +235,7 @@ a.signup {
 	font-size: 16px;
 }
 
-#cart {
+#cart, #bar-top-titles {
 	background: #ebebeb;
 	padding: 10px;
 	border-bottom: 2px solid #ccc;
@@ -247,6 +243,41 @@ a.signup {
 	color: #666;
 }
 
+
+#bar-finalizando  {
+	background: #ebebeb;
+	padding: 10px;
+	border-bottom: 2px solid #ccc;
+	font-family: "Lucida Grande",arial,sans-serif;
+	color: #666;
+	font-size:15px;
+}
+
+#bar-finalizando a {
+	font-weight: bold;
+	background: #666;
+	padding: 2px;
+	color: white;
+	text-decoration: none;
+}
+
+#bar-top-titles a {
+	font-size: 12px;
+	color: #FF1A00;
+}
+
+#TextCartEmpty {
+	font-size:14px;
+	font-weight: bold;
+	color: #666;
+	padding: 5px;
+	background: #FAFFAF;                             
+}
+
+#text {
+	font-size: 14px;
+	color: #B02B2C;
+}
 
 .list-products {
 	border-bottom: 1px solid #ebebeb;
@@ -348,6 +379,21 @@ a.signup {
 
 /* --------------------------------------- BUDGETS SHOW --------------------------------------- */
 
+.erro_add_product {
+	width: 138px;
+	background: #FF1A00;
+	border: 1px solid #CC0000;
+	color: white;
+	position: absolute;
+	top: -30px;
+	left:;
+	padding: 3px;
+}
+
+#teste {
+
+	position: relative;
+}
 table.produtos {
 	width: 100%;
 	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
@@ -361,13 +407,24 @@ table.produtos th {
 	border: 1px solid #EFEFEF;
 	border-bottom: 2px solid #ccc;
 	border-top: 2px solid #ccc;
+	
 }
+
+table.produtos tr {
+	position: relative;
+}
+
+
 table.produtos td {
 	padding: 5px;
 	padding-bottom: 10px;
 	border: 1px solid #ebebeb;
+
 }
 
+td.ingredients {
+	text-align: justify;
+}
 
 
 table.grid {
@@ -377,6 +434,8 @@ table.grid {
 	font-size: 13px;
 
 }
+
+
 
 table.grid td {
 	border: 1px solid #eeeeee;
@@ -578,17 +637,18 @@ fieldset.ListProductCart{
 	color: red;
 }
 
-#list_itens_budget{
-	width: 300px;
-	height: auto;
-	color: black;
-	background-color: #D9F0E8;
-	margin: 10px;
-	padding: 10px;
-	-moz-border-radius-bottomleft:0.5em;
-	-moz-border-radius-bottomright:0.5em;
-	-moz-border-radius-topleft:0.5em;
-	-moz-border-radius-topright:0.5em;
+.style-total {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+#dados-user {
+	background: #FAFFAF;
+	padding: 5px;
+	color: #666;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 
@@ -600,6 +660,15 @@ fieldset.ListProductCart{
 
 }
 
+.titulo-produtos-checkout {
+	width: 600px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+	color: #CC0000;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+
 #name-users {
 	width: 300px;
 	background: #FFF;
@@ -609,6 +678,17 @@ fieldset.ListProductCart{
 	padding: 2px;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
+
+#name-products-checkout {
+	width: 600px;
+	background: #FFF;
+	height: 34px;
+	margin-bottom: 7px;
+	border-bottom: 1px solid #EBEBeB;
+	padding: 2px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
 
 #name-users a, #nameBudgets a {
 	text-decoration: none;
@@ -705,6 +785,29 @@ fieldset.ListProductCart{
 	top: 1.5px;
 }
 /* ------------------------------------------- FIM STEPS ------------------------------------------- */
+
+/* ------------------------------------------- TABLE INTENS ------------------------------------------- */
+#table_itens { 
+	width: 100%;
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: center;
+}
+
+#table_itens th { 
+	padding: 5px;
+	background: #ebebeb;
+	color: #666;
+	border: 1px solid #EFEFEF;
+	border-bottom: 2px solid #ccc;
+	border-top: 2px solid #ccc;
+}
+#table_itens td {
+	padding: 8px;
+	border: 1px solid #efefef;
+}
+
+/* ------------------------------------------- TABLE INTENS ------------------------------------------- */
 
 
 /* ------------------------------------------- EFEITOS AJAX ------------------------------------------- */

@@ -12,6 +12,7 @@
 	<small><%= link_to "Detalhes", :controller => :store, :action => :details%></small>
 </div>
 <br /><br />
+<%= will_paginate @products %><br />
 <% unless @products.size == 0  %>
 	<% for product in @products %>
 		<table border="0" cellspacing="0" class="produtos">
@@ -24,7 +25,7 @@
 				<th>Descrição</th>
 				<th>Add Itens</th>
 				<th>Add Caixa</th>
-				<th>Remove Caixa</th>
+				<th>Rem. Caixa</th>
 			</tr>
 			<tr>
 				<td width='5%'><%= image_tag product.picture.url(:thumb) %></td>
@@ -32,15 +33,19 @@
 				<td width='2%'><%= product.category.name %></td>
 				
 				<td width='15%'><%= product.name %></td>
-				<td width='57%'><%= product.ingredients %></td>
+				<td width='57%' class='ingredients'><%= product.ingredients %></td>
 				<td width="">
+				<div id="teste">
+					
+				
 					<div id="msg_error_<%= product.id  %>">
 					</div>
 					<% form_remote_for :quantidade,  :url => {:action => :add_to_cart, :id => product}, :html => {:id => "quantidade_form_#{product.id}"} do |f|  %>
-							<%= text_field_tag :quantidade, nil, :class => "1", :size => 3  %><br/>
+							<%= text_field_tag :quantidade, nil, :id => "quantidade_#{product.id}", :size => 3  %><br/>
 							<%= image_submit_tag("add.png") %><%= link_to_remote image_tag("remove.png", :border => 0),  :url => {:action => "remove_item_action", :id => product} %>
 					<% end -%>
 
+					</div>
 				</td>
 						<td>
 							<div id="msg_error_<%= product.id  %>">
@@ -61,6 +66,7 @@
 	<h1>Nenhum Produto cadastrado ainda.</h1>
 <% end %>
 
+<%= will_paginate @products %><br />
 <br />
 <div id="ButtonEnd">
 	<% if @cart.contar_total > 0 %>

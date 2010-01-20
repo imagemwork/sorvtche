@@ -1,9 +1,8 @@
-  #page.replace_html :mensagem_error_remove_box, "Ops, Nao existe nenhuma caixa em seus intens"
-
-page.replace_html :total, @cart.contar_total
+#page.replace_html :mensagem_error_remove_box, "Ops, Nao existe nenhuma caixa em seus intens"
+page.replace_html :total, pluralize(@cart.contar_total, "iten") 
 page.visual_effect(:highlight, "cart", :duration => 0.5)
-page.replace_html :notice, flash[:notice]
-flash.discard
+#page.replace_html :notice, flash[:notice]
+#flash.discard
 if @cart.contar_total == 0
   page.replace_html 'ButtonEnd', "<b>Nenhum item selecionado ate o momento</b>"
   page.visual_effect(:highlight, "ButtonEnd", :duration => 0.5)

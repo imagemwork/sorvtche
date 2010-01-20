@@ -8,7 +8,7 @@ class Cart
   end
     
   def add_product(product, quantidade)
-      unless quantidade < 0
+      unless quantidade <= 0
         contar_itens(quantidade)
         get_current_item(product)
         if @current_item

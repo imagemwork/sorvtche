@@ -1,27 +1,43 @@
-<%= title("Finalizando Orçamento") %>
+<div id="bar-finalizando">
+	Finalizando Orçamento<br />
+	<div id="text"><p>Verifique abaixo seus produtos selecionados, caso queira alterar algum clique
+	<%= link_to "AQUI", :controller => :store %> para voltar para a listagem.</p></div>
+</div>
+
+<br /><br />
+
+<div id="dados-user">
+	<b>Nome: </b><i><%= current_user.name 	%></i><br />
+	<b>E-mail: </b><i><%= current_user.email %></i><br />
+</div>
+
 <br />
-<p>Verifique abaixo seus produtos selecionados, caso queira alterar algum clique
-<%= link_to "AQUI", :controller => :store %> para voltar para a listagem.</p><br />
 <br />
 
 
-<b>Seus Produtos</b> <br /><br /> <%= link_to "Realizar Alterações", :controller => :store %></small></b></h3><br />
+<div class="titulo-produtos-checkout">
+	Produtos / Quantidade
+</div>
 <div id="list_itens_budget">
 	<% for cart_item in @cart.items %>
-		<%= cart_item.name %> - <b><%= cart_item.item_quantity + cart_item.box_quantity%></b><br />
+		<div id="name-products-checkout">
+	
+			<%= cart_item.name %>  <span id="total"><%= cart_item.item_quantity + cart_item.box_quantity%></span><br />
+		
+		</div>
+		
+		
 	<% end -%><br />
+	<div id="name-products-checkout">
+		<span class="style-total">TOTAL</span>	<span id="total"><b style="color: #D15600"><%= @cart.contar_total  %></b></span>
+	</div>
+	
 </div>
-
-<div id="MessageEnd">
-	<p></p>
-</div>
+<br />
 
 <% form_for :order, :url => {:action => :save_order} do |form| %>
-
-	<b>Nome: </b><%= current_user.name 	%><br />
-	<b>E-mail: </b><%= current_user.email %><br />
 	
 	<%= form.hidden_field :user_id, :value => current_user.id %><br />
 	
-	<%= submit_tag "Finalizar!" %>
+	<%= image_submit_tag("finalizar.jpg") %>
 <% end -%>
