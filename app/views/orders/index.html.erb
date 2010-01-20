@@ -31,7 +31,11 @@
 		<div id="allSteps">
 			<div id="step1">
 				<p><%= image_tag("step1.jpg") %></p><br />
-				<p><%= image_tag("flecha_1.jpg") %>Exemplo uma conversa de chat, ou um livestream de feeds, ou até mesmo APIs públicas muito acessadas. O padrão de solução costuma ser um javascript que, em intervalos regulares, faz requisições Ajax a um servidor que retorna o conteúdo adicional a ser acrescentado na página.</p>
+				<p>
+					<%= image_tag("flecha_1.jpg") %>Exemplo uma conversa de chat, ou um livestream de feeds, ou até mesmo APIs públicas muito acessadas. O padrão de solução costuma ser um javascript que, em intervalos regulares, faz requisições Ajax a um servidor que retorna o conteúdo adicional a ser acrescentado na página.
+					<br /><br />
+					<%= link_to image_tag("comecar.jpg", :border => 0), :controller => "store", :action => "index" %>
+				</p>
 			</div>
 			<div id="step2">
 				<p><%= image_tag("step2.jpg") %></p><br />

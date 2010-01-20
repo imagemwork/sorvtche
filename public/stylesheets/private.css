@@ -238,17 +238,13 @@ a.signup {
 	width: 350px;
 	font-size: 16px;
 }
-	
 
-#cart{
-	width: 400px;
-	height: 50px;
-	background-color: #AEEADD;
-	-moz-border-radius-bottomleft:0.5em;
-	-moz-border-radius-bottomright:0.5em;
-	-moz-border-radius-topleft:0.5em;
-	-moz-border-radius-topright:0.5em;
-	padding: 4px;
+#cart {
+	background: #ebebeb;
+	padding: 10px;
+	border-bottom: 2px solid #ccc;
+	font-family: "Lucida Grande",arial,sans-serif;
+	color: #666;
 }
 
 
@@ -342,11 +338,37 @@ a.signup {
 	position: relative;
 }
 
-.realizado {
-	color: #666;
-}
+.realizado {color: #666;}
+
+
+#total {float: right; font-size: 20px; position: relative; top: -5px;}
+#voce_tem {width: 100px; float: right; font-size: 20px; position: relative; top: -5px;}
+
+
 
 /* --------------------------------------- BUDGETS SHOW --------------------------------------- */
+
+table.produtos {
+	width: 100%;
+	font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	text-align: center;
+}
+table.produtos th {
+	padding: 5px;
+	background: #ebebeb;
+	color: #666;
+	border: 1px solid #EFEFEF;
+	border-bottom: 2px solid #ccc;
+	border-top: 2px solid #ccc;
+}
+table.produtos td {
+	padding: 5px;
+	padding-bottom: 10px;
+	border: 1px solid #ebebeb;
+}
+
+
 
 table.grid {
 	width: 100%;

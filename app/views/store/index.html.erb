@@ -1,16 +1,25 @@
 <div id="cart">
-	<b>Meus items</b><br />
-	<b> Voce tem  <b id="total"><%= @cart.contar_total%></b> iten(s). </b>
+	<b></b>
+	
+	
+	<span id="total">
+	
+	<%= pluralize(@cart.contar_total, "iten") %></b>
+
+	</span>
+	<span id="voce_tem">Voce têm: </span>
+
 	<small><%= link_to "Detalhes", :controller => :store, :action => :details%></small>
 </div>
-<br />
+<br /><br />
 <% unless @products.size == 0  %>
 	<% for product in @products %>
-		<table border="1" cellspacing="0" cellpadding="5" class="grid">
+		<table border="0" cellspacing="0" class="produtos">
 			<tr>
+				<th>Imagem</th>
 				<th>Codigo</th>
 				<th>Categoria</th>
-				<th>Imagem</th>
+				
 				<th>Nome</th>
 				<th>Descrição</th>
 				<th>Add Itens</th>
@@ -18,25 +27,26 @@
 				<th>Remove Caixa</th>
 			</tr>
 			<tr>
+				<td width='5%'><%= image_tag product.picture.url(:thumb) %></td>
 				<td width='2%'><%= product.code %></td>
 				<td width='2%'><%= product.category.name %></td>
-				<td width='5%'><%= image_tag product.picture.url(:thumb) %></td>
+				
 				<td width='15%'><%= product.name %></td>
 				<td width='57%'><%= product.ingredients %></td>
-				<td>
+				<td width="">
 					<div id="msg_error_<%= product.id  %>">
 					</div>
 					<% form_remote_for :quantidade,  :url => {:action => :add_to_cart, :id => product}, :html => {:id => "quantidade_form_#{product.id}"} do |f|  %>
-							<%= text_field_tag :quantidade, nil, :class => "1", :size => 3  %>
-							<%= submit_tag "Adicionar" %>
+							<%= text_field_tag :quantidade, nil, :class => "1", :size => 3  %><br/>
+							<%= image_submit_tag("add.png") %><%= link_to_remote image_tag("remove.png", :border => 0),  :url => {:action => "remove_item_action", :id => product} %>
 					<% end -%>
-					<%= link_to_remote "Diminir Item",  :url => {:action => "remove_item_action", :id => product} %>
+
 				</td>
 						<td>
 							<div id="msg_error_<%= product.id  %>">
 							</div>
 							<% form_remote_for :box, :url => {:action => :add_to_cart_box, :id => product} do |f|  %>
-									<%= submit_tag "Add Caixa" %>
+									<%= image_submit_tag("add.png") %>
 							<% end -%>
 						</td>
 				<td>
@@ -46,7 +56,7 @@
 				</td>
 			</tr>
 	<% end -%>
-	    </table>
+	    </table><br />
 <% else %>
 	<h1>Nenhum Produto cadastrado ainda.</h1>
 <% end %>

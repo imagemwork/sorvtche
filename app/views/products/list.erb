@@ -44,7 +44,7 @@
 					<div id="edit_product_<%= dom_id(@product) %>" style="display:none" class="actions">
 						<span>
 						<%= link_to_remote image_tag("trash_small.png", :border	=> "0"), :url => product_path(@product),
-								:confirm => 'Voce tem certeza que deseja deletar esse produto.',
+								:confirm => 'Atenção: Caso este produto esteja ligado com algum orçamento o mesmo tambem irá ser deletado. Tem certeza que deseja deletar esse produto?',
 								:method => :delete
 						%> 
 						<%= link_to_remote "Editar", :url =>{:action => 'show_edit_product', :id => @product.id } %>

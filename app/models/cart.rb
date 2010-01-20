@@ -8,12 +8,14 @@ class Cart
   end
     
   def add_product(product, quantidade)
-      contar_itens(quantidade)
-      get_current_item(product)
-      if @current_item
-        @current_item.increment(quantidade, "item")
-      else 
-        @items << CartItem.new(product, quantidade, "item")
+      unless quantidade < 0
+        contar_itens(quantidade)
+        get_current_item(product)
+        if @current_item
+          @current_item.increment(quantidade, "item")
+        else 
+          @items << CartItem.new(product, quantidade, "item")
+      end
     end
   end
   

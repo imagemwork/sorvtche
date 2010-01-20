@@ -1,9 +1,8 @@
 page.replace_html :ValueTotalDetails, @cart.contar_total
-page.visual_effect :fade, @product.id
-
+page.visual_effect :fade, @product.id.to_s
 page.delay(0.5) do
   page.visual_effect :fade, "button_#{@product.id}"
-  page.visual_effect :fade, "product_#{@product.id}"
+  #page.visual_effect :fade, "product_#{@product.id}"
   if(@cart.contar_total == 0)
     page.hide :ButtonEnd
     page.replace_html 'CartEmpty', :partial => "cart_empty"
@@ -11,7 +10,6 @@ page.delay(0.5) do
     page.hide "table_itens"
   end
 end
-
 page.replace_html 'ValueTotalDetails', :partial => "total_details"
-page.visual_effect(:highlight, "ValueTotalDetails", :duration => 0.5)
-page.visual_effect(:highlight, "total_details_line", :duration => 0.5)
+#page.visual_effect(:highlight, "ValueTotalDetails", :duration => 0.5)
+#page.visual_effect(:highlight, "total_details_line", :duration => 0.5)

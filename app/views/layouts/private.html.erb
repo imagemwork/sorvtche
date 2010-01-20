@@ -55,7 +55,7 @@
 	<div id="menu">
 		<% if logged_in? and current_user.is_admin == true %>
 			<ul class="menu-admin-left">
-				<li><%= link_to "Home", orders_url%></li>
+				<li><%= link_to "Início", orders_url%></li>
 				<li><%= link_to "Produtos", {:controller => "products", :action => "list"}, :class => "button_list" %></li>
 				<li><%= link_to "Orçamentos", {:controller => "budgets", :action => "index"}, :class => "button_list" %></li>
 			</ul>
@@ -65,13 +65,10 @@
 			</ul>
 		<% elsif logged_in? %>
 			<ul class="menu-admin-left">
-				<li><%= link_to "Home", orders_url%></li>
-				<li><%= link_to "Produtos" %></li>
-				<li><%= link_to "Orçamentos" %></li>
+				<li><%= link_to "Início", orders_url%></li>
 			</ul>
 			<ul class="menu-admin">
-				<li><%= link_to "Novo Produto" %></li>
-				<li><%= link_to "Nova Categoria" %></li>
+				<li><%= link_to "Nossos Produtos", :controller => "store", :action => "index" %></li>
 			</ul>
 		<% end %>
 	</div>

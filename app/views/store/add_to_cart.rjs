@@ -1,4 +1,4 @@
-page.replace_html :total, @cart.contar_total
+page.replace_html :total, pluralize(@cart.contar_total, "iten") 
 if( (@quantidade == 0) or ( @quantidade < 0) )
    page.replace_html "msg_error_#{@product.id}", "<li><b>Deve ter algum valor</b></li>"
    page[:quantidade].focus
